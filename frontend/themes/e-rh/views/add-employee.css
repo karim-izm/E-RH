@@ -1,0 +1,26 @@
+/* Styling for the AddEmployeeForm */
+.add-employee {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.add-employee h3 {
+    text-align: center;
+    align-self: center;
+    font-size: 24px; /* Title font size */
+    margin-bottom: 20px; /* Space below title */
+}
+
+.add-button{
+    background-color: #0073e6; /* Button background color */
+    color: white; /* Button text color */
+    border: none; /* Remove button border */
+    font-weight: bold; /* Bold button text */
+    padding: 10px 20px; /* Button padding */
+    font-family: 'Montserrat', sans-serif; /* Button font */
+    align-self: center;
+}
+
+
+.add-button:hover {
+    background-color: #0053a3; /* Button background color on hover */
+}

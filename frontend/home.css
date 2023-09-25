@@ -1,0 +1,17 @@
+/* Center the links */
+.navbar-links {
+    display: flex;
+    justify-content: center;
+}
+
+/* Style the Login and Register buttons */
+.login-button {
+    margin-left: 10px; /* Add margin for spacing */
+    background-color: #3498db; /* Change the background color for Login */
+    color: #fff; /* Change the text color for Login */
+}
+
+.register-button {
+    background-color: #27ae60; /* Change the background color for Register */
+    color: #fff; /* Change the text color for Register */
+}
