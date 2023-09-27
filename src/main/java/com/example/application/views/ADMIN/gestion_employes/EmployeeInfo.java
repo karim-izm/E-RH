@@ -60,6 +60,7 @@ public class EmployeeInfo extends Dialog {
 
         HorizontalLayout row3 = new HorizontalLayout(
                 createDateField("Date d'embauche", employee.getDateEmbauche()),
+                createDateField("Salaire en DH", String.valueOf(employee.getSalary())),
                 createTextField("Date debut de contrat", employee.getDateDebutCt()),
                 createTextField("Date de fin de contrat", employee.getDateFinCt()),
                 createTextField("Departement", employee.getDepartement())

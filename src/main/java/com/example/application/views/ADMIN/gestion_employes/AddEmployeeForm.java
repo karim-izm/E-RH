@@ -44,6 +44,8 @@ public class AddEmployeeForm extends VerticalLayout {
     private DatePicker dateEmbaucheField = new DatePicker("Date d'embauche");
     private DatePicker dateDebutCtField = new DatePicker("Date de début de contrat");
     private DatePicker dateFinCtField = new DatePicker("Date de fin de contrat");
+
+    private TextField salary = new TextField("Salaire en DH");
     private TextField serviceField = new TextField("Departement");
     private TextField adresseField = new TextField("Adresse");
     private Select<String> situationFamilialeField = new Select();
@@ -67,14 +69,14 @@ public class AddEmployeeForm extends VerticalLayout {
         situationFamilialeField.setLabel("Situation familiale");
         situationFamilialeField.setItems("Celibataire");
         situationFamilialeField.setItems("Marié (e)");
-        situationFamilialeField.setItems("Divorcé (e)");
+        situationFamilialeField.setItems("Marié (e)",  "Celibataire"  , "Divorcé (e)");
 
         Hr hr = new Hr();
 
 
         HorizontalLayout row1 = new HorizontalLayout(cinField , firstNameField , lastNameField , birthDateField ,genderField);
         HorizontalLayout row2 = new HorizontalLayout(emailField , teleField , adresseField);
-        HorizontalLayout row3 = new HorizontalLayout(dateDebutCtField , dateFinCtField , dateEmbaucheField);
+        HorizontalLayout row3 = new HorizontalLayout(dateDebutCtField , salary , dateFinCtField , dateEmbaucheField);
         HorizontalLayout row4 = new HorizontalLayout(serviceField , dateEmbaucheField , dateDebutCtField , dateFinCtField);
         HorizontalLayout row5 = new HorizontalLayout(situationFamilialeField , nbEnfantsField);
         HorizontalLayout row6 = new HorizontalLayout(username , password);
@@ -103,6 +105,7 @@ public class AddEmployeeForm extends VerticalLayout {
             newEmployee.setAdresse(adresseField.getValue());
             newEmployee.setSituation_familiale(situationFamilialeField.getValue());
             newEmployee.setNb_enfants(Integer.parseInt(nbEnfantsField.getValue()));
+            newEmployee.setSalary(Double.parseDouble(salary.getValue()));
             newEmployee.setNbr_conje(0);
 
             try{

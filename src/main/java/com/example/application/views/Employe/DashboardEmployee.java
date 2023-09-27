@@ -54,7 +54,6 @@ public class DashboardEmployee extends VerticalLayout {
         // Retrieve congé demands for the current employee
         List<Conge> congéDemands = congeService.getCongeDemandsForEmployee(currentEmployee);
 
-        // Check if there are any notifications to display
         if (congéDemands.isEmpty()) {
             notificationsDiv.setVisible(false);
         } else {

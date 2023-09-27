@@ -42,9 +42,13 @@ public class EDocumentsView extends VerticalLayout {
         employeeInfoButton.addClickListener(e -> showEmployeeInfo());
         add(employeeInfoButton);
 
-        Button payslipHistoryButton = new Button("Bultain de Paie");
+        Button payslipHistoryButton = new Button("Historique des primes");
         payslipHistoryButton.addClickListener(e -> showPayslipHistory());
         add(payslipHistoryButton);
+
+        Button bultainDePaieButton = new Button("Bultein de paie");
+        bultainDePaieButton.addClickListener(e -> showPayslipHistory());
+        add(bultainDePaieButton);
     }
 
     private void showEmployeeInfo() {
@@ -78,26 +82,6 @@ public class EDocumentsView extends VerticalLayout {
         employeeInfoDialog.add(employeeInfoLayout);
         Button printButton = new Button("Imprimer");
         printButton.addClickListener(event -> {
-            byte[] pdfBytes = PdfGenerator.generateEmployeeInfoPDF(currentEmployee);
-
-            if (pdfBytes != null) {
-                StreamResource resource = new StreamResource("employee_info.pdf", () -> new ByteArrayInputStream(pdfBytes));
-                resource.setContentType("application/pdf");
-                resource.setCacheTime(0);
-
-                Anchor anchor = new Anchor(resource.toString());
-                anchor.getElement().setAttribute("download", true);
-                anchor.add(new Button("Télécharger le PDF"));
-
-                VerticalLayout pdfLayout = new VerticalLayout(anchor);
-                pdfLayout.setAlignItems(Alignment.CENTER);
-
-                Dialog pdfDialog = new Dialog();
-                pdfDialog.add(pdfLayout);
-                pdfDialog.open();
-            } else {
-                Notification.show("Error PDF");
-            }
         });
         employeeInfoDialog.add(printButton);
         employeeInfoDialog.open();
@@ -117,7 +101,7 @@ public class EDocumentsView extends VerticalLayout {
         Dialog payslipHistoryDialog = new Dialog();
         payslipHistoryDialog.setModal(true);
         payslipHistoryDialog.setWidth("auto");
-        payslipHistoryDialog.add(new H1("Bultein de paie"));
+        payslipHistoryDialog.add(new H1("Historique des primes"));
 
         // Create a layout to display the primes
         VerticalLayout primesLayout = new VerticalLayout();

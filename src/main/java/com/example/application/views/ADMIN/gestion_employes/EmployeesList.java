@@ -94,6 +94,7 @@ public class EmployeesList extends VerticalLayout {
         grid.addColumn(Employee::getBirthDate).setHeader("Date de naissance");
         grid.addColumn(Employee::getEmail).setHeader("Email");
         grid.addColumn(Employee::getTele).setHeader("Téléphone");
+        grid.addColumn(Employee::getSalary).setHeader("Salaire");
         grid.addColumn(Employee::getDateEmbauche).setHeader("Date d'embauche");
         grid.addColumn(Employee::getDateDebutCt).setHeader("Date de début de contrat");
         grid.addColumn(Employee::getDateFinCt).setHeader("Date de fin de contrat");

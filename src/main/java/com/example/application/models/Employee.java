@@ -47,6 +47,8 @@ public class Employee {
 
     private int nbr_conje;
 
+    private double salary;
+
     @OneToOne
     @JoinColumn(name = "user_id")
     private User user;

@@ -19,8 +19,8 @@ import com.vaadin.flow.router.Route;
 
 import java.util.List;
 
-@Route(value = "bulteinDePaie", layout = MainLayout.class)
-@PageTitle("Bulletin de Paie")
+@Route(value = "historiqueDesPrimes", layout = MainLayout.class)
+@PageTitle("Historique des primes")
 public class BultainDePaieView extends VerticalLayout {
     private final EmployeeService employeeService;
     private final PrimeService primeService;
@@ -32,7 +32,7 @@ public class BultainDePaieView extends VerticalLayout {
         this.employeeService = employeeService;
         this.primeService = primeService;
 
-        H1 title = new H1("Bulletin de Paie");
+        H1 title = new H1("Historique Des Primes");
         searchField.setWidth("100%");
         searchField.setPlaceholder("Rechercher par CIN ...");
         searchField.addValueChangeListener(e -> searchByCIN(e.getValue()));
@@ -90,7 +90,7 @@ public class BultainDePaieView extends VerticalLayout {
             layout.getStyle().set("border", "1px solid #ccc");
             layout.getStyle().set("border-radius", "5px");
             Text info = new Text(employee.getFullName() + " | CIN : "+employee.getCin());
-            H3 title = new H3("Bultain De Paie");
+            H3 title = new H3("Historiqe des primes");
 
             for (Prime prime : primes) {
                 String primeInfo = "- "+prime.getDate() + " | +" + prime.getMontant() + "DH : " + prime.getMotif();

@@ -1,5 +1,6 @@
 package com.example.application.views;
 
+import com.example.application.views.ADMIN.gestion_employes.DeplacementsEmployee;
 import com.example.application.views.Employe.DashboardEmployee;
 import com.example.application.views.Employe.EDocumentsView;
 import com.example.application.views.Employe.RequestCongeView;
@@ -90,9 +91,9 @@ public class EmployeeLayout extends AppLayout {
         SideNav conge = new SideNav();
         conge.setLabel("Congés");
         SideNav primes = new SideNav();
-        primes.setLabel("Primes & Bultains de paie");
+        primes.setLabel("Primes");
         SideNav deplacements = new SideNav();
-        deplacements.setLabel("Deplacements & Dépats");
+        deplacements.setLabel("Deplacements");
         SideNav docs = new SideNav();
         docs.setLabel("E-Documents");
 
@@ -100,6 +101,9 @@ public class EmployeeLayout extends AppLayout {
 
         conge.setCollapsible(true);
         conge.addItem(new SideNavItem("Demande de congé" , RequestCongeView.class , LineAwesomeIcon.CALENDAR.create()));
+
+        deplacements.setCollapsible(true);
+        deplacements.addItem(new SideNavItem("Deplacements" , DeplacementsEmployee.class , LineAwesomeIcon.PLANE_DEPARTURE_SOLID.create()));
 
 
         deplacements.setCollapsible(true);
